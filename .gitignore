@@ -1,2 +1,6 @@
 data/
 notebooks/
+
+# python cache
+__pycache__/
+*.pyc
