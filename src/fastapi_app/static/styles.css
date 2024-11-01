@@ -171,3 +171,21 @@ body {
     margin: 0 auto;
     text-align: center;
 }
+
+
+/************************** HOME ***************************/
+
+.home-profile-picture {
+    width: 70%;
+    height: 70%;
+    margin: 2rem auto;
+    opacity: 0.9;
+    padding: 0.4rem;
+    border: 0.15rem solid var(--color-text);
+}
+
+.home-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Define dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre las columnas */
+}
