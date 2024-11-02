@@ -162,7 +162,7 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 1.4rem;
-    line-height: 1.6rem;
+    /* line-height: 1.6rem; */
     color: var(--color-text);
     background: radial-gradient(circle, var(--color-background1), var(--color-background2));
     background-size: 0.32rem 0.32rem;
@@ -175,17 +175,68 @@ body {
 
 /************************** HOME ***************************/
 
-.home-profile-picture {
-    width: 70%;
-    height: 70%;
+.home-profile-picture-container {
+    width: 80%;
     margin: 2rem auto;
+    padding: 0 0.1rem;
+    /* border: 0.15rem solid var(--color-text); */
+}
+.home-profile-picture {
+    width: 95%;
+    /* height: 70%; */
     opacity: 0.9;
     padding: 0.4rem;
-    border: 0.15rem solid var(--color-text);
+}
+.home-profile-picture-description {
+    margin: auto;
+}
+.home-about-me-text {
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: left;
+}
+.fas.fa-home {
+    color: var(--color-text);
+}
+.home-tecnologias {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 1.2rem;
 }
 
-.home-container {
+.logo {
+    width: 4rem;
+    height: auto;
+    object-fit: contain;
+}
+.logo-description {
+    font-size: 1.2rem;
+    margin: 0.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.home-container1 {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Define dos columnas de igual tamaño */
-    gap: 20px; /* Espacio entre las columnas */
+    grid-template-columns: 2fr 1fr;
+    gap: 1.2rem;
+    align-items: center;
+}
+.home-container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
 }
