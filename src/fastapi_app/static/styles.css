@@ -70,6 +70,87 @@ html {
     }
 }
 
+:root {
+    --color-text: rgba(60,40,0,255);
+    --color-background1: rgba(250,230,190,255);
+    --color-background2: rgba(240,220,180,255);    
+}
+
+/************************** ANIMATIONS ***************************/
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+        transform: translateX(-50rem);
+    }
+    to {
+        opacity: 1;
+        scale:1;
+        transform: translateX(0rem);
+    }
+}
+.block {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes appearLeft {
+    from {
+        opacity: 0;
+        scale: 0.5;
+        transform: translateX(-200%);
+    }
+    to {
+        opacity: 1;
+        scale:1;
+        transform: translateX(0rem);
+    }
+}
+.appear-left {
+    animation: appearLeft linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+@keyframes appearRight {
+    from {
+        opacity: 0;
+        scale: 0.5;
+        transform: translateX(200%);
+    }
+    to {
+        opacity: 1;
+        scale:1;
+        transform: translateX(0rem);
+    }
+}
+.appear-right {
+    animation: appearRight linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 1s forwards; 
+}
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 1s forwards; 
+}
+
+
+
 /************************** FONTS ***************************/
 
 .crimson-text-regular {
@@ -116,12 +197,6 @@ html {
 
 /************************** HEADER NAME ***************************/
 
-:root {
-    --color-text: rgba(60,40,0,255);
-    --color-background1: rgba(250,230,190,255);
-    --color-background2: rgba(240,220,180,255);    
-}
-
 .custom-line {
     width: 100%;
     height: 0.12rem;
@@ -138,6 +213,12 @@ html {
     margin-top: 0.62rem;
     margin-bottom: 0;
 }
+.inner-line {
+    margin-top: 0.62rem;
+    margin-bottom: 0.62rem;
+    width: 95%;
+    justify-self: center;
+}
 
 .nav-bar {
     display: flex;
@@ -147,12 +228,35 @@ html {
 .nav-bar a {
     color: var(--color-text);
     text-decoration: none;
+    padding: 1.5rem;
 }
 
 .nav-bar a:hover {
     /* subrayar */
     text-decoration: underline;
 }
+.header-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem;
+}
+.nav-bar2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-bar2 a {
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.nav-bar2 a:hover {
+    /* subrayar */
+    text-decoration: underline;
+}
+
 
 /************************** BODY ***************************/
 
@@ -173,7 +277,117 @@ body {
 }
 
 
+/************************** FOOTER ***************************/
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+}
+
+footer button {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 0.3rem solid var(--color-text);
+    width: 3rem;
+    height: 3rem;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+footer button:hover {
+    animation: pulse 0.6s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Crece en un 10% */
+    }
+}
+
+
 /************************** HOME ***************************/
+
+
+.home-container0 {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 6rem;
+    align-items: center;
+    position: relative;
+    padding: 10rem 0 20rem 0;
+}
+
+.home-plot-container {
+    border: 0.2rem solid var(--color-text);
+}
+.home-plot {
+    width: 100%;
+    height: 30rem;
+    border: none;
+}
+.no-line-break {
+    display: inline;
+}
+.letter-title {
+    font-size: 4rem;
+    margin: 0.5rem;
+}
+.text-align-left {
+    text-align: left;
+}
+.home-lenguajes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    padding: 1.2rem;
+}
+
+
+.home-container1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    position: relative;
+    padding: 10rem 0 10rem 0;
+}
+
+/* .home-container1::before {
+    content: "";
+    position: absolute;
+    left: calc(66.66% - 0.1rem);
+    width: 0.1rem;
+    background-color: var(--color-text);
+    height: 95%;
+} */
+
+.home-container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    align-items: center;
+    position: relative;
+}
+
+.home-container2::before {
+    content: "";
+    position: absolute;
+    left: calc(50% - 0.1rem);
+    width: 0.1rem;
+    background-color: var(--color-text);
+    height: 95%;
+}
+
 
 .home-profile-picture-container {
     width: 80%;
@@ -205,8 +419,36 @@ body {
     width: 90%;
     padding: 1.2rem;
 }
+.home-contacto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    width: 90%;
+    padding: 0 1.2rem;
+}
+.home-contacto-title {
+    margin: 0.5rem 0;
+}
+.descargar-cv {
+    color: var(--color-text);
+    text-decoration: none;
+}
+.descargar-cv:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+}
+.ir-github {
+    color: var(--color-text);
+    text-decoration: none;
+}
+.ir-github:hover {
+    color: var(--color-text);
+    text-decoration: underline;
+}
 
 .logo {
+    font-size: 2.5rem;
     width: 4rem;
     height: auto;
     object-fit: contain;
@@ -216,27 +458,30 @@ body {
     margin: 0.2rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.home-container1 {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1.2rem;
-    align-items: center;
+.flex-container {
+    display: flex;
+    align-items: flex-start;
 }
-.home-container2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
+
+.experiencia1-image{
+    margin-right: 0.1rem;
+    width: 15rem;
 }
+.experiencia1-texto {
+    text-align: left;
+    margin: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

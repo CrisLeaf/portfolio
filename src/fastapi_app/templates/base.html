@@ -14,18 +14,39 @@
 </head>
 <body>
   <header>
-    <h1 class="unifrakturmaguntia-regular header-name">Cristóbal Torres Rojas</h1>
-    <div class="custom-line upper-line"></div>
+    <div class="header-items">
+      <h1 class="crimson-text-bold header-name">Cristóbal Torres Rojas</h1>
+      <!-- <div class="custom-line upper-line"></div> -->
       <nav class="nav-bar">
-        <a href="/">Inicio</a>
+        <!-- <a href="/">Inicio</a> -->
         <a href="/projects">Proyectos</a>
-        <a href="/blog">Blog</a>
+        <!-- <a href="/blog">Blog</a> -->
         <a href="/contact">Contacto</a>
+      </nav>
+    </div>
+      <nav class="nav-bar2">
+        <div>
+          <i class="fa-solid fa-envelope"></i>
+          <strong>ctorres.ai@hotmail.com</strong>
+        </div>
+        <a class="descargar-cv" href="static/cv/CV_Agosto2024.pdf" download="Cristóbal-Torres-Rojas-CV">
+          <i class="fa-regular fa-file-lines"></i>
+          Descargar CV
+        </a>
+        <a class="ir-github" href="https://github.com/CrisLeaf" target="_blank">
+          <i class="fa-brands fa-github"></i>
+          GitHub
+        </a>
       </nav>
     <div class="custom-line lower-line"></div>
   </header>
   <main>
     {% block content %}{% endblock %}
   </main>
+  <footer>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </footer>
 </body>
 </html>
