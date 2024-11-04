@@ -10,6 +10,7 @@ import sys
 sys.path.append('../dash_app/')
 
 from home_plot import create_start_dash_app
+from second_plot import create_second_dash_app
 
 
 app = FastAPI()
@@ -27,6 +28,8 @@ app.include_router(blog.router)
 home_plot = create_start_dash_app(requests_pathname_prefix="/home_plot/")
 app.mount("/home_plot", WSGIMiddleware(home_plot.server))
 
+second_plot = create_second_dash_app(requests_pathname_prefix="/second_plot/")
+app.mount("/second_plot", WSGIMiddleware(second_plot.server))
 
 @app.get('/')
 def read_root():
