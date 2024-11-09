@@ -404,7 +404,7 @@ footer button:hover {
     padding: 0 0.1rem;
 }
 .home-profile-picture {
-    width: 95%;
+    width: 65%;
     opacity: 0.9;
     padding: 0.4rem;
 }
@@ -432,6 +432,15 @@ footer button:hover {
     grid-template-columns: 2fr 3fr;
     /* grid-template-rows: 100px 100px; */
     gap: 6rem;
+    align-items: center;
+    position: relative;
+    padding: 10rem 0 20rem 0;
+}
+.sub-home-container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: 100px 100px; */
+    gap: 1rem;
     align-items: center;
     position: relative;
     padding: 10rem 0 20rem 0;
@@ -512,10 +521,45 @@ footer button:hover {
 }
 
 
+/* slider-images */
+.slider-frame {
+    width: 25rem;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.slider-frame ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 16s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+    list-style: none;
+    width: 100%;
+}
+.slider-frame img {
+    width: 100%;
+}
+
+@keyframes slide {
+    5% {margin-left: 0%;}
+    25% {margin-left: 0%;}
+
+    30% {margin-left: -100%;}
+    50% {margin-left: -100%;}
+
+    55% {margin-left: -200%;}
+    75% {margin-left: -200%;}
+
+    80% {margin-left: -300%;}
+    100% {margin-left: -300%;}    
+}
 
 
 
-/************************** BLOQUE 3 ***************************/
+/************************** BLOQUE 4 ***************************/
 
 .home-container4 {
     display: grid;
@@ -523,7 +567,7 @@ footer button:hover {
     gap: 6rem;
     align-items: center;
     position: relative;
-    padding: 10rem 0 20rem 0;
+    padding: 40rem 0 10rem 0;
     
     justify-content: center;
     align-items: center;
