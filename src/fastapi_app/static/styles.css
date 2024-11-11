@@ -1,75 +1,65 @@
 html {
     font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
+    /* font-size: 1rem; */
 }
 .header-name {
     font-size: 5rem;
 }
+:root {
+    --horizontal-gap: 6rem;
+    --bloque-4-rem: 10rem;
+}
 
-@media (max-width: 800px) {
-    /* html {
-        font-size: 14px;
-    } */
+@media (max-width: 1400px) {
     .header-name {
         font-size: 4.5rem;
     }
+    :root {
+        --horizontal-gap: 5rem;
+    }
 }
-@media (max-width: 720px) {
-    /* html {
-        font-size: 14px;
-    } */
+@media (max-width: 1200px) {
     .header-name {
         font-size: 4rem;
     }
+    :root {
+        --horizontal-gap: 4rem;
+    }
 }
-@media (max-width: 640px) {
-    /* html {
-        font-size: 14px;
-    } */
+@media (max-width: 1000px) {
     .header-name {
         font-size: 3.5rem;
     }
 }
-@media (max-width: 560px) {
-    /* html {
-        font-size: 14px;
-    } */
+@media (max-width: 800px) {
     .header-name {
         font-size: 3rem;
     }
 }
-@media (max-width: 480px) {
-    /* html {
+@media (max-width: 720px) {
+    html {
         font-size: 14px;
-    } */
-    .header-name {
-        font-size: 2.5rem;
     }
 }
-@media (max-width: 400px) {
-    /* html {
-        font-size: 14px;
-    } */
-    .header-name {
-        font-size: 2rem;
+@media (max-width: 600px) {
+    html {
+        font-size: 12px;
     }
 }
-@media (max-width: 320px) {
-    /* html {
-        font-size: 14px;
-    } */
-    .header-name {
-        font-size: 1.5rem;
+@media (max-width: 440px) {
+    html {
+        font-size: 11px;
     }
 }
-@media (max-width: 240px) {
-    /* html {
-        font-size: 14px;
-    } */
-    .header-name {
-        font-size: 1.3rem;
-    }
-}
+
+
+
+
+
+
+
+
 
 :root {
     --color-text: rgba(60,40,0,255);
@@ -364,11 +354,15 @@ footer button:hover {
 
 .home-container0 {
     display: grid;
-    grid-template-columns: 2fr 3fr;
-    gap: 6rem;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(30rem, 1fr)
+    );
+    /* grid-template-columns: 2fr 3fr; */
+    gap: var(--horizontal-gap);
     align-items: center;
     position: relative;
-    padding: 10rem 0 20rem 0;
+    padding: 10rem 0 0rem 0;
 }
 .home-about-me-text {
     margin: 2rem auto;
@@ -377,6 +371,7 @@ footer button:hover {
 }
 .home-plot-container {
     border: 0.2rem solid var(--color-text);
+    border-radius: 1.4rem;
 }
 .home-plot {
     width: 100%;
@@ -395,14 +390,22 @@ footer button:hover {
 
 .home-container1 {
     display: grid;
+    grid-template-areas: "left right";
     grid-template-columns: 1fr 1fr;
-    gap: 6rem;
+    gap: var(--horizontal-gap);
     align-items: center;
     position: relative;
-    padding: 10rem 0 20rem 0;
+    padding: 10rem 0 0rem 0;
+}
+
+.container1-left {
+    grid-area: left;
+}
+.container1-right {
+    grid-area: right;
 }
 .home-profile-picture-container {
-    width: 80%;
+    width: 100%;
     margin: 2rem auto;
     padding: 0 0.1rem;
 }
@@ -410,6 +413,7 @@ footer button:hover {
     width: 65%;
     opacity: 0.9;
     padding: 0.4rem;
+    border-radius: 1.4rem;
 }
 .home-profile-picture-description {
     margin: auto;
@@ -428,16 +432,30 @@ footer button:hover {
     font-size: 1rem;
 }
 
+@media (max-width: 850px) {
+    .home-container1 {
+        grid-template-areas: "right" "left";
+        grid-template-columns: 1fr;
+    }
+    .home-profile-picture {
+        width: 40%;
+    }
+}
+
 /************************** BLOQUE 2 ***************************/
 
 .home-container2 {
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(30rem, 1fr)
+    );
+    /* grid-template-columns: 2fr 3fr; */
     /* grid-template-rows: 100px 100px; */
-    gap: 6rem;
+    gap: var(--horizontal-gap);
     align-items: center;
     position: relative;
-    padding: 10rem 0 20rem 0;
+    padding: 10rem 0 0rem 0;
 }
 .sub-home-container2 {
     display: grid;
@@ -470,11 +488,11 @@ footer button:hover {
 
 .home-container3{
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     gap: 8rem;
     width: 100%;
     height: 100vh;
-    padding: 10rem 0 20rem 0;
+    padding: 10rem 0 0rem 0;
 }
 .home-right-column {
     align-items: right;
@@ -484,31 +502,25 @@ footer button:hover {
     align-items: center;
     justify-content: center;
     font-size: 1.6rem;
-    /* background-color: var(--color-background1); */
     border-radius: 1rem;
-
-    /* background: radial-gradient(circle, rgba(250,230,190,255), rgba(240,220,180,255)); */
-    /* background: radial-gradient(circle, rgba(220,200,160,255), rgba(210,190,130,255));
-    background-size: 0.32rem 0.32rem;
-    background-color: var(--color-background1); */
-
 }
 .box1 {
     display: grid;
+    /* grid-template-columns: repeat(
+        auto-fill,
+        minmax(30rem, 1fr)
+    ); */
+    grid-template-areas: "left right";
     grid-template-columns: 1fr 2fr;
 }
-.box2 {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+@media (max-width: 1023px) {
+    .box1 {
+        grid-template-areas: "right" "left";
+        grid-template-columns: 1fr;
+        
+    }
 }
-.box3 {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-}
-.box4 {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
+
 
 .subtitle-proyecto {
     font-size: 1.2rem;
@@ -537,7 +549,7 @@ footer button:hover {
 .slider-frame {
     width: 24rem;
     height: auto;
-    margin: 0 1.6rem;
+    margin: 0 1rem;
     overflow: hidden;
 }
 .slider-frame ul {
@@ -570,16 +582,18 @@ footer button:hover {
 }
 
 .right-margin-16 {
-    margin-right: 1.6rem;
+    margin-right: 1rem;
 }
 .left-margin-16 {
-    margin-left: 1.6rem;
+    margin-left: 1rem;
 }
 
 .imagen-proyecto {
     width: 100%;
     height: auto;
-    margin: 0 1.6rem;
+    margin: 0;
+    border-radius: 1.4rem;
+
 }
 
 /* .imagen-proyecto {
@@ -593,16 +607,24 @@ footer button:hover {
 
 .home-container4 {
     display: grid;
-    grid-template-columns: 2fr 2fr;
-    gap: 6rem;
+    grid-template-areas: "left right";
+    grid-template-columns: 1fr 1fr;
+    gap: var(--horizontal-gap);
     align-items: center;
     position: relative;
-    padding: 10rem 0 10rem 0;
+    padding: var(--bloque-4-rem) 0 0rem 0;
     
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+.container4-left {
+    grid-area: left;
+}
+.container4-right {
+    grid-area: right;
+}
+
 .two-rows-division {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -628,6 +650,104 @@ footer button:hover {
  */
 
 
+.imagen-estudios {
+    width: 30rem;
+    border-radius: 1.4rem;
+}
+
+@media (max-width: 950px) {
+    .home-container4 {
+        grid-template-areas: "right" "left";
+        grid-template-columns: 1fr;
+    }
+}
+
+.hidden {
+    color: transparent;
+}
 
 
-
+@media (max-width: 1023px) {
+    .home-container0 {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .home-container1 {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .home-container2 {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .home-container3 {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .home-container4 {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .container-slider-frame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+    .box {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+@media (max-width: 440px) {
+    .left-margin-16 {
+        margin-left: 0.5rem;
+    }
+    .right-margin-16 {
+        margin-right: 0.5rem;
+    }
+    .home-container0 {
+        width: 99%;
+        margin: 0 auto;
+    }
+    .home-container1 {
+        width: 99%;
+        margin: 0 auto;
+    }
+    .home-container2 {
+        width: 99%;
+        margin: 0 auto;
+    }
+    .home-container3 {
+        width: 99%;
+        margin: 0 auto;
+    }
+    .home-container4 {
+        width: 99%;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 720px) {
+    .home-plot {
+        height: 34rem;
+    }
+    .second-plot {
+        height: 34rem;
+    }
+}
+@media (max-width: 600px) {
+    .home-plot {
+        height: 40rem;
+    }
+    .second-plot {
+        height: 40rem;
+    }
+}
+@media (max-width: 440px) {
+    .home-plot {
+        height: 44rem;
+    }
+    .second-plot {
+        height: 44rem;
+    }
+}

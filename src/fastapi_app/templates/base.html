@@ -15,10 +15,12 @@
 <body>
   <header>
     <div class="header-items">
-      <h1 class="crimson-text-bold header-name">Cristóbal Torres Rojas</h1>
+      <h1 class="crimson-text-bold header-name left-margin-16">Cristóbal Torres Rojas</h1>
       <nav class="nav-bar helvetica-text-regular">
-        <a href="/projects">Proyectos</a>
-        <a href="/contact">Contacto</a>
+        <a class="descargar-cv right-margin-16" href="static/cv/CV_Agosto2024.pdf" download="Cristóbal-Torres-Rojas-CV">
+          <i class="fa-regular fa-file-lines"></i>
+          Descargar CV
+        </a>
       </nav>
     </div>
       <nav class="nav-bar2 helvetica-text-regular">
@@ -26,9 +28,13 @@
           <i class="fa-solid fa-envelope"></i>
           <strong>ctorres.ai@hotmail.com</strong>
         </a>
-        <a class="descargar-cv" href="static/cv/CV_Agosto2024.pdf" download="Cristóbal-Torres-Rojas-CV">
+        <!-- <a class="descargar-cv" href="static/cv/CV_Agosto2024.pdf" download="Cristóbal-Torres-Rojas-CV">
           <i class="fa-regular fa-file-lines"></i>
           Descargar CV
+        </a> -->
+        <a class="ir-github" href="https://www.linkedin.com/in/cristorres-dev/" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+          LinkedIn
         </a>
         <a class="ir-github" href="https://github.com/CrisLeaf" target="_blank">
           <i class="fa-brands fa-github"></i>
@@ -41,6 +47,7 @@
     {% block content %}{% endblock %}
   </main>
   <footer>
+    
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
